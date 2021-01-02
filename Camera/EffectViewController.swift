@@ -30,17 +30,22 @@ class EffectViewController: UIViewController {
     }
     */
     @IBOutlet weak var effectImageView: UIImageView!
+    
+    //フィルター名を指定
+    var filterName = Filter.Mono
+    
     @IBAction func effectButtonAction(_ sender: Any) {
         //エフェクト前の画像をアンラップして取り出す
         if let image = originalImage {
             //フィルター名を指定する
-            let filterName = "CIPhotoEffectMono"
+            //let filterName = "CIPhotoEffectMono"
+            filterName.next()
             //元々の画像の回転角度を取得
             let rotate = image.imageOrientation
             //UIImage型の画像をCIImage型に変換
             let inputImage = CIImage(image: image)
             //フィルターの種類を引数で指定されたものに指定してCIFilterインスタンスを取得
-            guard let effectFilter = CIFilter(name: filterName) else {
+            guard let effectFilter = CIFilter(name: filterName.rawValue) else {
                 return
             }
             //エフェクトのパラメータを初期化
@@ -64,5 +69,19 @@ class EffectViewController: UIViewController {
 
     @IBAction func backButtonAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    enum Filter: String {
+        case Mono = "CIPhotoEffectMono"
+        case Insert = "CIPhotoEffectInsert"
+        case Process = "CIPhotoEfectProcess"
+        case Transfer = "CIPhotoEffectTransfer"
+        case Sepia = "CISepiaTone"
+        
+        static let values = [Mono, Insert, Process, Transfer, Sepia]
+        mutating func next() {
+            let val = (Filter.values.firstIndex(of: self)! + 1) % Filter.values.count
+            self = Filter.values[val]
+        }
     }
 }
