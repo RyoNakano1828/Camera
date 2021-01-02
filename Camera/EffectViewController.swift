@@ -67,6 +67,17 @@ class EffectViewController: UIViewController {
         }
     }
 
+    @IBAction func shareButtonAction(_ sender: Any) {
+        //表示画像をアンラップしてシェア画像を取り出す
+        if let shareImage = effectImageView.image {
+            //UIActivityViewCOntrollerに渡す配列を作成
+            let shareItems = [shareImage]
+            //UIActivityVIewControllerにシェア画像を渡す
+            let activityViewController = UIActivityViewController(activityItems: shareImage, applicationActivities: nil)
+            //UIActivityViewControllerを表示
+            present(activityViewController, animated: true, completion: nil)
+        }
+    }
     @IBAction func backButtonAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
