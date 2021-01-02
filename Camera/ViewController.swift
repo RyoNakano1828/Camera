@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,8 +18,16 @@ class ViewController: UIViewController {
     @IBAction func cameraButton(_ sender: Any) {
         let imagePickerController = UIImagePickerController()
         imagePickerController.sourceType = .camera
+        imagePickerController.delegate = self
         present(imagePickerController, animated: true, completion: nil)
     }
+    
+    //撮影後に呼ばれるdelegateメソッド
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPikingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        pictureImageView.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        dismiss(animated: true, completion: nil)
+    }
+    
     
 }
 
