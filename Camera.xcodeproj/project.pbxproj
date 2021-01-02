@@ -13,6 +13,7 @@
 		52C4D4A525A0644B0053964C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52C4D4A325A0644B0053964C /* Main.storyboard */; };
 		52C4D4A725A064500053964C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52C4D4A625A064500053964C /* Assets.xcassets */; };
 		52C4D4AA25A064500053964C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52C4D4A825A064500053964C /* LaunchScreen.storyboard */; };
+		52C4D4B425A073860053964C /* EffectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C4D4B325A073860053964C /* EffectViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		52C4D4A625A064500053964C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52C4D4A925A064500053964C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52C4D4AB25A064500053964C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52C4D4B325A073860053964C /* EffectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				52C4D49F25A0644B0053964C /* SceneDelegate.swift */,
 				52C4D4A125A0644B0053964C /* ViewController.swift */,
 				52C4D4A325A0644B0053964C /* Main.storyboard */,
+				52C4D4B325A073860053964C /* EffectViewController.swift */,
 				52C4D4A625A064500053964C /* Assets.xcassets */,
 				52C4D4A825A064500053964C /* LaunchScreen.storyboard */,
 				52C4D4AB25A064500053964C /* Info.plist */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52C4D4A225A0644B0053964C /* ViewController.swift in Sources */,
+				52C4D4B425A073860053964C /* EffectViewController.swift in Sources */,
 				52C4D49E25A0644B0053964C /* AppDelegate.swift in Sources */,
 				52C4D4A025A0644B0053964C /* SceneDelegate.swift in Sources */,
 			);
